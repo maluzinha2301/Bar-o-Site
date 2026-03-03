@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barão do Rio Branco 1944 — Camisetas Oficiais</title>
+  <meta name="description" content="Grêmio Esportivo Barão do Rio Branco (Içara/SC) — Camisetas oficiais e personalizadas. Peça pelo WhatsApp: 48 99839-1128." />
+
+  <style>
+    /* ===== Reset ===== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:#f6ffe9;
+      background:#061006;
+      overflow-x:hidden;
+      line-height:1.45;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    :root{
+      /* ===== Barão theme ===== */
+      --brand:#22c55e;     /* verde */
+      --brand2:#facc15;    /* amarelo */
+      --brand3:#34d399;    /* verde claro */
+      --ok:#22c55e;
+      --warn:#fbbf24;
+      --danger:#ff4d4d;
+
+      --bg:#061006;
+      --surface:rgba(255,255,255,.06);
+      --surface2:rgba(255,255,255,.08);
+      --border:rgba(255,255,255,.14);
+
+      --text:#f6ffe9;
+      --muted:#cfe8c4;
+
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,.38);
+      --max:1160px;
+    }
+
+    /* ===== Animated background ===== */
+    .bg-orbs::before, .bg-orbs::after{
+      content:"";
+      position:fixed; inset:-30%;
+      background:
+        radial-gradient(closest-side, rgba(34,197,94,.22), transparent 70%),
+        radial-gradient(closest-side, rgba(250,204,21,.18), transparent 70%),
+        radial-gradient(closest-side, rgba(52,211,153,.14), transparent 70%);
+      filter: blur(30px);
+      z-index:-2;
+      animation: float 12s ease-in-out infinite;
+    }
+    .bg-orbs::after{
+      animation-duration: 16s;
+      opacity:.92;
+      transform: translate(18px, 20px) scale(1.05);
+    }
+    @keyframes float{
+      0%,100%{transform: translate(0,0) scale(1)}
+      50%{transform: translate(40px,-30px) scale(1.06)}
+    }
+
+    /* ===== Layout ===== */
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    .grid{display:grid;gap:18px}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    .cardPad{padding:18px}
+    .muted{color:var(--muted)}
+    .sep{height:1px;background:rgba(255,255,255,.14);margin:14px 0}
+
+    /* ===== Header ===== */
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(6,16,6,.72);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:900;
+      letter-spacing:.2px;
+    }
+
+    /* ===== Logo com escudo ===== */
+    .logo{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 12px 28px rgba(34,197,94,.18);
+      padding:4px;
+      flex:0 0 auto;
+    }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      border-radius:50%;
+    }
+
+    nav{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{color:var(--muted);font-weight:900;font-size:.95rem}
+    nav a:hover{color:var(--text)}
+
+    .pill{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:8px 12px;border-radius:999px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size:.9rem;color:var(--muted);
+      font-weight:900;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--brand2);
+      box-shadow:0 0 0 4px rgba(250,204,21,.12);
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 18px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight:1000;
+      cursor:pointer;
+      transition:.2s transform,.2s background,.2s border,.2s box-shadow;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.24);
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(90deg, var(--brand), var(--brand2));
+      color:#0b1a0b;
+      box-shadow: 0 14px 30px rgba(250,204,21,.12);
+    }
+    .btn.primary:hover{
+      box-shadow: 0 18px 40px rgba(34,197,94,.16);
+    }
+    .btn.small{padding:10px 12px;border-radius:12px;font-weight:1000}
+
+    .h1{
+      font-size: clamp(2.05rem, 2.8vw, 3.1rem);
+      letter-spacing:-.03em;
+      line-height:1.05;
+    }
+    .h2{font-size:1.35rem;letter-spacing:-.01em}
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      background: rgba(34,197,94,.14);
+      border: 1px solid rgba(34,197,94,.24);
+      color:#eaffea;
+      font-weight:1000;
+      width:fit-content;
+      font-size:.9rem;
+    }
+    .tag.hot{
+      background: rgba(250,204,21,.14);
+      border-color: rgba(250,204,21,.26);
+      color:#fff6c7;
+    }
+
+    /* ===== Hero ===== */
+    .hero{padding:28px 0 10px}
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .heroLeft{padding:22px}
+    .heroLeft p{margin-top:12px;font-size:1.06rem}
+    .ctaRow{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .trustRow{margin-top:14px;display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-weight:900;font-size:.95rem}
+    .trustItem{display:flex;gap:8px;align-items:center}
+    .tick{
+      width:18px;height:18px;border-radius:6px;
+      background: rgba(34,197,94,.18);
+      border: 1px solid rgba(34,197,94,.35);
+      display:grid;place-items:center;color:var(--brand2);font-weight:1000;
+    }
+    .heroRight{padding:18px}
+    .heroPanel{
+      height:100%;
+      border-radius: var(--radius);
+      padding:18px;
+      background:
+        radial-gradient(700px 240px at 50% 0%, rgba(34,197,94,.22), transparent 65%),
+        radial-gradient(700px 240px at 50% 30%, rgba(250,204,21,.14), transparent 70%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .stat{
+      padding:14px;border-radius:14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      display:flex;flex-direction:column;gap:8px;
+    }
+
+    /* ===== Products/Features ===== */
+    .features{grid-template-columns: repeat(3, 1fr)}
+    .feat{padding:18px;display:flex;flex-direction:column;gap:10px;min-height:170px}
+    .icon{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      font-size:20px;
+    }
+
+    /* ===== Gallery ===== */
+    .gallery{grid-template-columns: repeat(4, 1fr);}
+    .gItem{
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      min-height: 170px;
+    }
+    .gItem img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      transform: scale(1.02);
+      transition: .25s transform, .25s filter;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .gItem:hover img{transform: scale(1.07);}
+    .gCap{
+      position:absolute;
+      left:10px; right:10px; bottom:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      background: rgba(6,16,6,.72);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+      font-weight:1000;
+    }
+    .gSub{
+      font-weight:900;
+      color: var(--muted);
+      font-size:.92rem;
+      margin-top:2px;
+    }
+
+    /* ===== FAQ ===== */
+    details{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      padding:12px 14px;
+      background: rgba(255,255,255,.05);
+    }
+    summary{cursor:pointer;font-weight:1000}
+    details p{margin-top:10px;color:var(--muted);font-weight:900}
+
+    /* ===== Footer ===== */
+    footer{padding:26px 0 34px;color:var(--muted)}
+    .footGrid{display:grid;grid-template-columns: 1.2fr .8fr;gap:18px}
+    .miniLinks{display:flex;gap:10px;flex-wrap:wrap}
+    .miniLinks a{
+      padding:10px 12px;border-radius:12px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      font-weight:1000;
+    }
+
+    /* ===== Floating WhatsApp ===== */
+    .wa-float{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1000;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:10px;
+    }
+    .wa-btn{
+      width:60px;height:60px;border-radius:50%;
+      background:#25D366;
+      display:grid;place-items:center;
+      box-shadow: 2px 10px 22px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.18);
+      font-size:28px;
+      cursor:pointer;
+      transition:.2s transform;
+    }
+    .wa-btn:hover{transform: translateY(-2px)}
+    .wa-panel{
+      width:min(340px, calc(100vw - 24px));
+      border-radius:16px;
+      background: rgba(6,16,6,.80);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(12px);
+      padding:12px;
+      display:none;
+      box-shadow: var(--shadow);
+    }
+    .wa-panel.open{display:block}
+    .wa-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+    .wa-title{font-weight:1000}
+    .wa-x{
+      width:34px;height:34px;border-radius:12px;
+      display:grid;place-items:center;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      cursor:pointer;
+      font-weight:1000;
+    }
+    .wa-actions{display:grid;gap:10px}
+    .wa-actions .btn{width:100%}
+
+    /* ===== Mobile sticky CTA ===== */
+    .stickyCta{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      padding: 10px 12px;
+      background: rgba(6,16,6,.82);
+      border-top: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      display:none;
+    }
+    .stickyCta .row{
+      max-width: var(--max);
+      margin:0 auto;
+      display:flex;gap:10px;
+    }
+    .stickyCta .row .btn{flex:1}
+
+    /* ===== Responsive ===== */
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns:1fr}
+      .features{grid-template-columns: 1fr}
+      .gallery{grid-template-columns: repeat(2, 1fr);}
+      .footGrid{grid-template-columns: 1fr}
+    }
+    @media (max-width: 640px){
+      nav{display:none}
+      .wrap{padding:18px}
+      .btn{width:100%}
+      .ctaRow{width:100%}
+      .stickyCta{display:block}
+      .gallery{grid-template-columns: 1fr;}
+      .gItem{min-height: 210px;}
+    }
+
+    /* ===== Section title ===== */
+    .sectionTitle{margin-top:26px;margin-bottom:12px}
+
+    /* ===== Slider (responsivo e centralizado) ===== */
+    .slider{
+      position:relative;
+      overflow:hidden;
+      margin-top:18px;
+    }
+    .slides{
+      position:relative;
+      height: clamp(240px, 40vw, 520px);
+    }
+    .slide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transition: opacity .55s ease;
+    }
+    .slide.active{opacity:1}
+
+    .slide img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit: cover;
+      object-position: center center;
+      transform: translateZ(0);
+    }
+
+    .caption{
+      position:absolute;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      padding:14px 14px;
+      border-radius:16px;
+      background: rgba(6,16,6,.72);
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .caption h3{
+      margin-bottom:6px;
+      font-size: clamp(1.02rem, 2.2vw, 1.28rem);
+    }
+    .caption p{
+      color:var(--muted);
+      font-weight:900;
+      font-size: clamp(.92rem, 1.8vw, 1.02rem);
+    }
+
+    .prev, .next{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background: rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.14);
+      color:white;
+      font-size:22px;
+      padding:10px 14px;
+      cursor:pointer;
+      border-radius:14px;
+      backdrop-filter: blur(8px);
+      transition: .2s transform, .2s background;
+      z-index:5;
+    }
+    .prev{ left:12px; }
+    .next{ right:12px; }
+    .prev:hover, .next:hover{
+      background: rgba(0,0,0,.62);
+      transform: translateY(-50%) scale(1.03);
+    }
+
+    .dots{
+      position:absolute;
+      bottom:10px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:8px;
+      z-index:6;
+    }
+    .dotSlide{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background: rgba(255,255,255,.45);
+      cursor:pointer;
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .dotSlide.active{
+      background: var(--brand2);
+      border-color: rgba(250,204,21,.55);
+    }
+
+    @media (max-width: 640px){
+      .prev, .next{ display:none; }
+      .caption{ left:12px; right:12px; bottom:12px; padding:12px; }
+    }
+  </style>
+</head>
+
+<body class="bg-orbs">
+  <!-- ===== Floating WhatsApp ===== -->
+  <div class="wa-float" aria-label="WhatsApp">
+    <div class="wa-panel" id="waPanel">
+      <div class="wa-head">
+        <div>
+          <div class="wa-title">Comprar camiseta pelo WhatsApp</div>
+          <div class="muted" style="font-weight:900;font-size:.92rem">Barão do Rio Branco • 1944</div>
+        </div>
+        <div class="wa-x" id="waClose" aria-label="Fechar">✕</div>
+      </div>
+      <div class="wa-actions">
+        <a class="btn primary" target="_blank" rel="noopener"
+           href="https://wa.me/5548998391128?text=Ol%C3%A1!%20Quero%20comprar%20uma%20camiseta%20do%20Bar%C3%A3o%20do%20Rio%20Branco%20(1944).%0AModelo%3A%20%0ATamanho%3A%20%0ANome%20(opcional)%3A%20%0AN%C3%BAmero%20(opcional)%3A%20%0A">
+          💬 Chamar no WhatsApp
+        </a>
+        <a class="btn" href="#modelos">👕 Ver modelos</a>
+      </div>
+    </div>
+
+    <div class="wa-btn" id="waToggle" title="WhatsApp">💬</div>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">
+            <img src="img/barao/escudo.png" alt="Escudo Barão do Rio Branco">
+          </div>
+          <div>
+            <div style="font-size:1.06rem">Barão do Rio Branco</div>
+            <div class="muted" style="font-size:.86rem;font-weight:1000">Içara/SC • Fundado em 1944</div>
+          </div>
+        </div>
+
+        <nav>
+          <a href="#modelos">Modelos</a>
+          <a href="#personalizar">Personalização</a>
+          <a href="#fotos">Fotos</a>
+          <a href="#entrega">Entrega</a>
+          <a href="#contato">Comprar</a>
+        </nav>
+
+        <a class="btn small primary" href="#contato">Comprar agora</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="heroGrid">
+        <div class="card heroLeft">
+          <div class="pill"><span class="dot"></span> Barão • Time da Mineração • LARM</div>
+
+          <h1 class="h1" style="margin-top:14px">
+            👕 Camisetas do <span style="color:#fff6c7">Barão do Rio Branco</span> — leve essa história no peito.
+          </h1>
+
+          <p class="muted">
+            Peça pelo WhatsApp e escolha o modelo + tamanho. Se quiser, personalizamos com <strong>nome e número</strong>.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" target="_blank" rel="noopener"
+               href="https://wa.me/5548998391128?text=Ol%C3%A1!%20Quero%20comprar%20uma%20camiseta%20do%20Bar%C3%A3o%20do%20Rio%20Branco%20(1944).%0AModelo%3A%20%0ATamanho%3A%20%0ANome%20(opcional)%3A%20%0AN%C3%BAmero%20(opcional)%3A%20%0A">
+              💬 WhatsApp (48 99839-1128)
+            </a>
+            <a class="btn" href="#modelos">👕 Ver modelos</a>
+          </div>
+
+          <div class="trustRow">
+            <div class="trustItem"><span class="tick">✓</span> Tamanhos do PP ao XXG</div>
+            <div class="trustItem"><span class="tick">✓</span> Personalização (nome/número)</div>
+            <div class="trustItem"><span class="tick">✓</span> Retirada ou envio</div>
+          </div>
+        </div>
+
+        <div class="heroRight">
+          <div class="heroPanel">
+            <div class="stat">
+              <div class="tag">⭐ Tradição desde 1944</div>
+              <div class="muted" style="font-weight:900">Um símbolo do Bairro Aurora e de Içara</div>
+            </div>
+            <div class="stat">
+              <div class="tag">⚡ Pedido rápido</div>
+              <div class="muted" style="font-weight:900">Escolha modelo + tamanho e finalize no Whats</div>
+            </div>
+            <div class="stat">
+              <div class="tag hot">🔥 Mais vendidos</div>
+              <div class="muted" style="font-weight:900">Verde clássico • Amarelo treino • Preto/dourado (edição especial)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HISTÓRIA & CAMPEONATOS ===== -->
+    <section id="historia">
+      <div class="sectionTitle">
+        <div>
+          <div class="pill"><span class="dot"></span> Nossa História</div>
+          <h2 class="h2" style="margin-top:10px">Campeonatos & Momentos do Barão</h2>
+          <p class="muted" style="margin-top:6px;font-weight:900">Desde 1944 representando o Bairro Aurora e Içara.</p>
+        </div>
+      </div>
+
+      <div class="slider card" aria-label="Slider de fotos do Barão">
+        <div class="slides">
+          <div class="slide active">
+            <img src="img/barao/historia-1.jpg" alt="Fundação e história do Barão no Bairro Aurora">
+            <div class="caption">
+              <h3>⭐ Fundação - 1944</h3>
+              <p>Fundado por mineiros no Bairro Aurora.</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="img/barao/historia-2.jpg" alt="Título regional e campeonato na LARM">
+            <div class="caption">
+              <h3>🏆 Regional LARM</h3>
+              <p>Tradição e respeito no futebol amador.</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="img/barao/historia-3.jpg" alt="Equipe técnica e gerações do clube">
+            <div class="caption">
+              <h3>💚 Nossos Técnicos</h3>
+              <p>História de gerações!</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="img/barao/historia-4.jpg" alt="Torcida e comunidade do Bairro Aurora">
+            <div class="caption">
+              <h3>💚 Nossa Torcida</h3>
+              <p>O Bairro Aurora pulsa verde e amarelo.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="prev" type="button" aria-label="Slide anterior">❮</button>
+        <button class="next" type="button" aria-label="Próximo slide">❯</button>
+        <div class="dots" aria-label="Indicadores do slider"></div>
+      </div>
+    </section>
+
+    <!-- ===== MODELOS ===== -->
+    <section id="modelos">
+      <div class="sectionTitle">
+        <div>
+          <div class="pill"><span class="dot"></span> Coleção Barão</div>
+          <h2 class="h2" style="margin-top:10px">Modelos de camisetas</h2>
+          <p class="muted" style="margin-top:6px;font-weight:900">Clique e peça pelo WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="grid features">
+        <div class="card feat">
+          <div class="icon">🟩</div>
+          <div class="h2">Clássica Verde</div>
+          <div class="muted" style="font-weight:900">O tradicional do Barão — ideal para jogo e arquibancada.</div>
+          <div class="sep"></div>
+          <a class="btn primary" target="_blank" rel="noopener"
+             href="https://wa.me/5548998391128?text=Ol%C3%A1!%20Quero%20a%20camiseta%20BAR%C3%83O%20CL%C3%81SSICA%20VERDE.%0ATamanho%3A%20%0ANome%20(opcional)%3A%20%0AN%C3%BAmero%20(opcional)%3A%20%0A">
+            💬 Pedir clássica
+          </a>
+        </div>
+
+        <div class="card feat">
+          <div class="icon">🟨</div>
+          <div class="h2">Treino Amarela</div>
+          <div class="muted" style="font-weight:900">Leve e confortável — perfeita para treino e dia a dia.</div>
+          <div class="sep"></div>
+          <a class="btn primary" target="_blank" rel="noopener"
+             href="https://wa.me/5548998391128?text=Ol%C3%A1!%20Quero%20a%20camiseta%20BAR%C3%83O%20TREINO%20AMARELA.%0ATamanho%3A%20%0ANome%20(opcional)%3A%20%0AN%C3%BAmero%20(opcional)%3A%20%0A">
+            💬 Pedir treino
+          </a>
+        </div>
+
+        <div class="card feat">
+          <div class="icon">🖤</div>
+          <div class="h2">Edição Especial</div>
+          <div class="muted" style="font-weight:900">Visual moderno (ex.: preto/dourado) — estoque limitado.</div>
+          <div class="sep"></div>
+          <a class="btn primary" target="_blank" rel="noopener"
+             href="https://wa.me/5548998391128?text=Ol%C3%A1!%20Quero%20a%20camiseta%20BAR%C3%83O%20EDI%C3%87%C3%83O%20ESPECIAL%20(consultar%20cores).%0ATamanho%3A%20%0ANome%20(opcional)%3A%20%0AN%C3%BAmero%20(opcional)%3A%20%0A">
+            💬 Pedir especial
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PERSONALIZAÇÃO ===== -->
+    <section id="personalizar">
+      <div class="sectionTitle">
+        <div>
+          <div class="pill"><span class="dot"></span> Do seu jeito</div>
+          <h2 class="h2" style="margin-top:10px">Personalização</h2>
+          <p class="muted" style="margin-top:6px;font-weight:900">Nome e número (opcional) para torcida e atletas.</p>
+        </div>
+      </div>
+
+      <div class="grid features">
+        <div class="card feat">
+          <div class="icon">🔤</div>
+          <div class="h2">Nome nas costas</div>
+          <div class="muted" style="font-weight:900">Seu sobrenome, apelido ou “Fiel do Barão”.</div>
+        </div>
+        <div class="card feat">
+          <div class="icon">🔢</div>
+          <div class="h2">Número</div>
+          <div class="muted" style="font-weight:900">Escolha seu número preferido (ex.: 10, 7, 1944).</div>
+        </div>
+        <div class="card feat">
+          <div class="icon">⭐</div>
+          <div class="h2">Detalhes do Barão</div>
+          <div class="muted" style="font-weight:900">Estrela 1944 e identidade do “Time da Mineração”.</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <div class="cardPad">
+          <div class="h2">❓ Dúvidas rápidas</div>
+          <div class="sep"></div>
+          <div class="grid" style="gap:12px">
+            <details>
+              <summary>Quais tamanhos têm disponível?</summary>
+              <p>Normalmente PP ao XXG. No WhatsApp você confirma estoque do modelo escolhido.</p>
+            </details>
+            <details>
+              <summary>Posso colocar nome e número?</summary>
+              <p>Sim. Envie o nome e o número desejado no pedido.</p>
+            </details>
+            <details>
+              <summary>Como faço para retirar/receber?</summary>
+              <p>Combinamos retirada ou envio no WhatsApp, conforme sua região.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOTOS ===== -->
+    <section id="fotos">
+      <div class="sectionTitle">
+        <div>
+          <div class="pill"><span class="dot"></span> Fotos reais</div>
+          <h2 class="h2" style="margin-top:10px">Camisetas e torcida</h2>
+          <p class="muted" style="margin-top:6px;font-weight:900">Troque as imagens pelos seus arquivos.</p>
+        </div>
+      </div>
+
+      <div class="grid gallery">
+        <div class="card gItem">
+          <img src="img/barao/camisa-2.jpeg" alt="Camiseta Barão do Rio Branco" />
+          <div class="gCap">Modelo<div class="gSub">Clássica</div></div>
+        </div>
+        <div class="card gItem">
+          <img src="img/barao/camisa-3.jpeg" alt="Torcida do Barão" />
+          <div class="gCap">Treino<div class="gSub">Barão</div></div>
+        </div>
+        <div class="card gItem">
+          <img src="img/barao/camisa-1.jpeg" alt="Bairro Aurora e tradição do Barão" />
+          <div class="gCap">Carvoeira<div class="gSub">Bairro Aurora</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ENTREGA ===== -->
+    <section id="entrega">
+      <div class="sectionTitle">
+        <div>
+          <div class="pill"><span class="dot"></span> Retirada ou envio</div>
+          <h2 class="h2" style="margin-top:10px">Como receber</h2>
+          <p class="muted" style="margin-top:6px;font-weight:900">Combine pelo WhatsApp a melhor forma.</p>
+        </div>
+      </div>
+
+      <div class="grid features">
+        <div class="card feat">
+          <div class="icon">📍</div>
+          <div class="h2">Retirada</div>
+          <div class="muted" style="font-weight:900">Combinamos local e horário em Içara/SC.</div>
+        </div>
+        <div class="card feat">
+          <div class="icon">🚚</div>
+          <div class="h2">Envio</div>
+          <div class="muted" style="font-weight:900">Enviamos conforme região e disponibilidade.</div>
+        </div>
+        <div class="card feat">
+          <div class="icon">💳</div>
+          <div class="h2">Pagamento</div>
+          <div class="muted" style="font-weight:900">Valores e formas de pagamento informados no WhatsApp.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section id="contato">
+      <div class="card" style="padding:22px;background: linear-gradient(90deg, rgba(34,197,94,.20), rgba(250,204,21,.14));border: 1px solid rgba(250,204,21,.22);">
+        <div class="pill"><span class="dot"></span> Garanta a sua agora</div>
+        <h2 class="h2" style="margin-top:10px">Peça sua camiseta do Barão no WhatsApp</h2>
+        <p class="muted" style="margin-top:6px;font-weight:900">Exemplo: “Clássica Verde — G — Nome: BARÃO — Nº: 10”.</p>
+
+        <div class="ctaRow">
+          <a class="btn primary" target="_blank" rel="noopener"
+             href="https://wa.me/5548998391128?text=Ol%C3%A1!%20Quero%20comprar%20uma%20camiseta%20do%20Bar%C3%A3o%20do%20Rio%20Branco%20(1944).%0AModelo%3A%20%0ATamanho%3A%20%0ANome%20(opcional)%3A%20%0AN%C3%BAmero%20(opcional)%3A%20%0A">
+            💬 WhatsApp 48 99839-1128
+          </a>
+          <a class="btn" href="#modelos">👕 Ver modelos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <div class="footGrid">
+        <div class="card" style="box-shadow:none">
+          <div class="cardPad">
+            <div class="brand" style="margin-bottom:10px">
+              <div class="logo">
+                <img src="img/barao/escudo.png" alt="Escudo Barão do Rio Branco">
+              </div>
+              <div>
+                <div style="font-size:1.06rem;font-weight:1000">Barão do Rio Branco</div>
+                <div class="muted" style="font-size:.86rem;font-weight:1000">Içara/SC • 1944 • Time da Mineração</div>
+              </div>
+            </div>
+            <div class="muted" style="font-weight:900">
+              © <span id="year"></span> Barão do Rio Branco. Todos os direitos reservados.
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="box-shadow:none">
+          <div class="cardPad">
+            <div class="h2">Links rápidos</div>
+            <div class="sep"></div>
+            <div class="miniLinks">
+              <a href="#modelos">Modelos</a>
+              <a href="#personalizar">Personalização</a>
+              <a href="#entrega">Entrega</a>
+              <a href="#contato">Comprar</a>
+            </div>
+            <div class="sep"></div>
+            <div class="muted" style="font-size:.95rem;font-weight:900">
+              <strong>WhatsApp</strong>: (48) 99839-1128
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ===== Mobile sticky CTA ===== -->
+  <div class="stickyCta">
+    <div class="row">
+      <a class="btn primary" target="_blank" rel="noopener"
+         href="https://wa.me/5548998391128?text=Ol%C3%A1!%20Quero%20comprar%20uma%20camiseta%20do%20Bar%C3%A3o%20do%20Rio%20Branco%20(1944).%0AModelo%3A%20%0ATamanho%3A%20%0ANome%20(opcional)%3A%20%0AN%C3%BAmero%20(opcional)%3A%20%0A">
+        WhatsApp
+      </a>
+      <a class="btn" href="#modelos">👕 Modelos</a>
+    </div>
+  </div>
+
+  <script>
+    // ===== Year =====
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // ===== WhatsApp panel =====
+    const waPanel = document.getElementById("waPanel");
+    const waToggle = document.getElementById("waToggle");
+    const waClose  = document.getElementById("waClose");
+
+    function toggleWa(open){
+      if(!waPanel) return;
+      if(open === true) waPanel.classList.add("open");
+      else if(open === false) waPanel.classList.remove("open");
+      else waPanel.classList.toggle("open");
+    }
+
+    if(waToggle) waToggle.addEventListener("click", ()=>toggleWa());
+    if(waClose)  waClose.addEventListener("click", ()=>toggleWa(false));
+    document.addEventListener("click", (e)=>{
+      if(!waPanel || !waToggle) return;
+      const clickedInside = waPanel.contains(e.target) || waToggle.contains(e.target);
+      if(!clickedInside) toggleWa(false);
+    });
+
+    // ===== Slider (responsivo + swipe) =====
+    const slides = document.querySelectorAll(".slide");
+    const nextBtn = document.querySelector(".next");
+    const prevBtn = document.querySelector(".prev");
+    const dotsContainer = document.querySelector(".dots");
+    const slider = document.querySelector(".slider");
+
+    let current = 0;
+    let interval;
+    const DELAY = 4000;
+
+    if (slides.length && dotsContainer && slider) {
+      // criar bolinhas
+      slides.forEach((_, i) => {
+        const dot = document.createElement("div");
+        dot.classList.add("dotSlide");
+        if(i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(i, true));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll(".dotSlide");
+
+      function showSlide(index){
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+      }
+
+      function nextSlide(){
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }
+
+      function prevSlide(){
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
+      }
+
+      function goToSlide(index, userAction=false){
+        current = index;
+        showSlide(current);
+        if(userAction) restartAuto();
+      }
+
+      function startAuto(){
+        stopAuto();
+        interval = setInterval(nextSlide, DELAY);
+      }
+
+      function stopAuto(){
+        if(interval) clearInterval(interval);
+      }
+
+      function restartAuto(){
+        startAuto();
+      }
+
+      if(nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); restartAuto(); });
+      if(prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); restartAuto(); });
+
+      slider.addEventListener("mouseenter", stopAuto);
+      slider.addEventListener("mouseleave", startAuto);
+
+      // Swipe
+      let startX = 0;
+      let isTouching = false;
+
+      slider.addEventListener("touchstart", (e) => {
+        isTouching = true;
+        startX = e.touches[0].clientX;
+        stopAuto();
+      }, {passive:true});
+
+      slider.addEventListener("touchend", (e) => {
+        if(!isTouching) return;
+        isTouching = false;
+        const endX = e.changedTouches[0].clientX;
+        const diff = endX - startX;
+
+        if(Math.abs(diff) > 40){
+          if(diff < 0) nextSlide();
+          else prevSlide();
+        }
+        startAuto();
+      }, {passive:true});
+
+      // start
+      showSlide(0);
+      startAuto();
+    }
+  </script>
+</body>
+</html>
